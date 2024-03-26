@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <header><h2 id="mijntitel">Mijn website</h2></header>
+    {% block content %}
+        {% for post in posts %}
+   <style>
+    
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(78, 25, 25);
+}
+
+.post {
+  margin-left: 500px; /* Adjust margin if needed */
+  background-color: pink;
+  border-radius: 5px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: 3px solid rgb(255, 255, 255);
+  font-family:Arial, Helvetica, sans-serif;
+  width: 400px;
+  
+}
+
+header {
+  background-color: rgb(255, 136, 1);
+  color: white;
+  padding: 10px 0;
+  font-size: 20px;
+  height: 100px;
+}
+
+h2 {
+  color: orangered;
+  font-size: 24px;
+}
+
+#div1 {
+    background-color: rgb(78, 25, 25);
+    margin-left: 700px;
+    margin-top: 20px;
+    
+}
+
+#mijntitel {
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+footer {    
+    height: 50px;
+    background-color: rgb(255, 136, 1);
+}
+
+
+   </style>
+
+   <div id="div1">
+            <article class="post">
+                <time class="date">{{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        </div>  
+        {% endfor %}
+    {% endblock %}
+
+    <footer></footer>
+</body>
+</html>
